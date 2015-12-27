@@ -79,13 +79,10 @@
 		if (registration.singleton){
 			var singletonObj = singletons[type];
 			if (!singletonObj){
-				console.log('not defined',type);
 				singletonObj = singletons[type] = create(type);
 			}
-			console.log('defined',type);
 			return singletonObj;
 		}
-		console.log('creating new type ', type);
 		return create(type);
 	};
 	
@@ -99,7 +96,6 @@
 	
 	si.run = function(f){
 		var parameters = argumentResolver.getParameterNames(f);
-		console.log(parameters);
 		var objects = si.getAll(parameters);
 		f.apply(null,objects);
 	};
