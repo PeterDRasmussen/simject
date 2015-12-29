@@ -1,7 +1,7 @@
 ;(function(options){
-	'use strict'
+	'use strict';
 	
-	var argumentResolver = undefined,
+	var argumentResolver,
 		container = {},
 		singletons = {};
 			
@@ -92,7 +92,7 @@
 			objects.push(si.get(parameters[i]));
 		}
 		return objects;
-	}
+	};
 	
 	si.run = function(f){
 		var parameters = argumentResolver.getParameterNames(f);
